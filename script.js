@@ -4,8 +4,7 @@ function getComputerChoice() {
   return choice;
 }
 
-let playerScore = 0;
-let computerScore = 0;
+let winner;
 
 function rpsRound(playerSelection, computerSelection) {
   const playerChoice = playerSelection;
@@ -16,27 +15,35 @@ function rpsRound(playerSelection, computerSelection) {
     (playerChoice === "paper" && computerSelection === "rock") ||
     (playerChoice === "scisors" && computerSelection === "paper")
   ) {
-    playerScore += 1;
+    winner = "player";
     return `🏆 You win! ${playerChoice} beats ${computerSelection}`;
   } else {
-    computerScore += 1;
+    winner = "computer";
     return `You Lose! ${computerSelection} beats ${playerChoice}`;
   }
 }
 
-const playerSelection = "rock"; //prompt("Type in rock, paper, or scisors").toLowerCase();
+const playerSelection = playerPushed; //prompt("Type in rock, paper, or scisors").toLowerCase();
 const computerSelection = getComputerChoice();
-console.log(`Computer: ${computerSelection}`);
-console.log(`You: ${playerSelection}`);
-console.log(rpsRound(playerSelection, computerSelection));
 
 function game() {
-  while (rpsRound()) {
-    console.log(`Your score: ${playerScore}`)
-    console.log(`Computer score: ${computerScore}`)
-    if (playerScore === 5 ||)
+  rpsRound(playerSelection, computerSelection);
+  while (playerScore < 5 && computerScore < 5) {
+    if (playerScore === 5) {
+      return `Congrats! You win the game! 🏆`;
+    } else if (computerScore === 5) {
+      return `whelp... You lost, boy. Better luck next time`;
+    }
   }
 }
+
+console.log(`Computer: ${computerSelection}`);
+console.log(`You: ${playerSelection}`);
+
+console.log(`Your score: ${playerScore}`);
+console.log(`Computer score: ${computerScore}`);
+
+document.querySelector(button).addEventListener("click", game());
 
 /*
 function game() {
