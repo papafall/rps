@@ -1,23 +1,20 @@
 function getComputerChoice() {
-  const rps = ["rock", "paper", "scisors"];
+  const rps = ["rock", "paper", "scissors"];
   const choice = rps[Math.floor(Math.random() * rps.length)];
   return choice;
 }
 
 function rpsRound(playerChoice, computerChoice) {
-  const playerWin = `🏆 You win! ${playerChoice} beats ${computerChoice}`;
-  const computerWin = `You Lose! ${computerChoice} beats ${playerChoice}`;
-
   if (playerChoice === computerChoice) {
     return `It's a tie! You both selected ${computerChoice}`;
   } else if (
-    (playerChoice === "rock" && computerChoice === "scisors") ||
+    (playerChoice === "rock" && computerChoice === "scissors") ||
     (playerChoice === "paper" && computerChoice === "rock") ||
-    (playerChoice === "scisors" && computerChoice === "paper")
+    (playerChoice === "scissors" && computerChoice === "paper")
   ) {
-    return playerWin;
+    return `🏆 You win! ${playerChoice} beats ${computerChoice}`;
   } else {
-    return computerWin;
+    return `You Lose! ${computerChoice} beats ${playerChoice}`;
   }
 }
 
@@ -27,7 +24,7 @@ function game() {
   let winningScore = 5;
 
   while (playerScore < winningScore && computerScore < winningScore) {
-    const playerChoice = prompt("rock, paper, or scisor?").toLowerCase();
+    const playerChoice = prompt("rock, paper, or scissors?").toLowerCase();
     const computerChoice = getComputerChoice();
     console.log(`You chose: ${playerChoice}`);
     console.log(`Computer chose: ${computerChoice}`);
@@ -35,9 +32,13 @@ function game() {
     const roundResult = rpsRound(playerChoice, computerChoice);
     console.log(roundResult);
 
-    if (roundResult === playerWin) {
+    roundResult;
+
+    if (roundResult === `🏆 You win! ${playerChoice} beats ${computerChoice}`) {
       playerScore++;
-    } else if (roundResult === computerWin) {
+    } else if (
+      roundResult === `You Lose! ${computerChoice} beats ${playerChoice}`
+    ) {
       computerScore++;
     }
 
