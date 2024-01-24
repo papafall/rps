@@ -1,9 +1,11 @@
+// Function to randomize the computer selection
 function getComputerChoice() {
   const rps = ["rock", "paper", "scissors"];
   const choice = rps[Math.floor(Math.random() * rps.length)];
   return choice;
 }
 
+//Function to deterine winner for 1 round
 function rpsRound(playerChoice, computerChoice) {
   if (playerChoice === computerChoice) {
     return `It's a tie! You both selected ${computerChoice}`;
@@ -18,6 +20,7 @@ function rpsRound(playerChoice, computerChoice) {
   }
 }
 
+//Game function that loops and adds 1 point to overall score until someone reaches 5 points and wins the game
 function game() {
   let playerScore = 0;
   let computerScore = 0;
