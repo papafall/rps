@@ -21,9 +21,9 @@ body {
 }
 
 button {
-  background-color: green;
+  background-color: greenyellow;
   border: none;
-  color: white;
+  color: black;
   font-weight: bolder;
   padding: 15px 32px;
   text-align: center;
@@ -36,7 +36,7 @@ button {
 }
 
 button:hover {
-  background-color: rgb(6, 76, 8);
+  background-color: rgb(29, 118, 37);
 }
 
 #title {
@@ -54,4 +54,9 @@ button:active {
 
 #game-message {
   padding: 10px;
+}
+
+#playerTotal,
+#computerTotal {
+  color: greenyellow;
 }
