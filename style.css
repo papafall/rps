@@ -5,6 +5,8 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
+  background-color: rgba(32, 32, 61, 0.976);
+  color: white;
 }
 #game-container {
   text-align: center;
@@ -48,4 +50,8 @@ button:hover {
 button:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#game-message {
+  padding: 10px;
 }
