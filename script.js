@@ -1,4 +1,4 @@
-// Getting the DOMs
+// Getting the HTML elements
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
@@ -24,9 +24,8 @@ let playerScore = 0;
 let computerScore = 0;
 let winningScore = 5;
 
-//Function to deterine winner for 1 round
+//Function to determine winner for 1 round
 function rpsRound(playerChoice, computerChoice) {
-  //const computerChoice = getComputerChoice();
   selections.textContent = ` You chose ${playerChoice} -- Computer chose ${computerChoice}`;
 
   if (playerChoice === computerChoice) {
