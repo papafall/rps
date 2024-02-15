@@ -4,7 +4,7 @@ A simple Rock, Paper, Scissors game implemented in JavaScript. This game allows 
 
 ## How to Play
 
-1. Open the [game.html](game.html) file in your web browser; or go to [https://papafall.github.io/rps/](https://papafall.github.io/rps/)
+1. Open the index.html file in your web browser; or go to [https://papafall.github.io/rps/](https://papafall.github.io/rps/)
 2. Select one of the three options: Rock, Paper, or Scissors.
 3. The computer will randomly select its choice.
 4. The result of the round will be displayed, and the scores will be updated.
