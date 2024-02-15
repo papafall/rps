@@ -51,15 +51,30 @@ function resetGame() {
   winningMessage.textContent = "";
 }
 
+// Function to open the modal with a custom message
+function openModal(message) {
+  const modal = document.getElementById("modal");
+  const modalMessage = document.getElementById("modal-message");
+
+  modalMessage.textContent = message;
+  modal.style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+  const modal = document.getElementById("modal");
+  modal.style.display = "none";
+  resetGame();
+}
+
 //Function to announce game winner; first player to reach 5 points
 function gameWinner() {
   if (playerScore === winningScore || computerScore === winningScore) {
     if (playerScore > computerScore) {
-      alert("Congratulations! You win the game! 🏆");
+      openModal("Congratulations! You win the game! 🏆");
     } else if (computerScore > playerScore) {
-      alert("Game over - you lose 😔");
+      openModal("Game over - you lose 😔");
     }
-    resetGame();
   }
 }
 
